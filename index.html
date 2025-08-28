@@ -8,11 +8,7 @@
       margin: 0;
       padding: 0;
       height: 100%;
-    }
-    iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
+      font-family: Arial, sans-serif;
     }
     #printBtn {
       position: fixed;
@@ -27,17 +23,22 @@
       cursor: pointer;
       font-size: 16px;
     }
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
   </style>
 </head>
 <body>
-  <button id="printBtn" onclick="printIframe()">🖨️ Imprimir</button>
-  <iframe id="pipefyFrame" src="https://app.pipefy.com/public/phase/7f75d69c-0f9d-4bf3-a8d7-2917dd04d0f0?origin=email"></iframe>
+  <button id="printBtn" onclick="abrirParaImprimir()">🖨️ Abrir e Imprimir</button>
+
+  <iframe src="https://s3.ezchatbot.ai/projects/9e157552-93f8-48b4-8f50-7ca552ed9bc9/conversations/9fbbe2da-1adb-4532-be4a-c3823f3257a1/b1b51514-2204-4864-b604-97e9f02b19a9.pdf"></iframe>
 
   <script>
-    function printIframe() {
-      const iframe = document.getElementById('pipefyFrame');
-      iframe.contentWindow.focus();
-      iframe.contentWindow.print();
+    function abrirParaImprimir() {
+      const url = "https://s3.ezchatbot.ai/projects/9e157552-93f8-48b4-8f50-7ca552ed9bc9/conversations/9fbbe2da-1adb-4532-be4a-c3823f3257a1/b1b51514-2204-4864-b604-97e9f02b19a9.pdf";
+      window.open(url, "_blank");
     }
   </script>
 </body>
